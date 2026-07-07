@@ -1,0 +1,1072 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "QA Test API",
+    "version": "1.0.0",
+    "description": "OpenAPI 3.0 test"
+  },
+  "servers": [
+    {
+      "url": "https://example.com/api/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "schemas": {
+      "SimpleBody": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "op0",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "op1",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/token": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "op2",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/auth/authentication": {
+      "post": {
+        "tags": [
+          "auth"
+        ],
+        "operationId": "op3",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/oauth/login": {
+      "post": {
+        "tags": [
+          "oauth"
+        ],
+        "operationId": "op4",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/oauth/token": {
+      "post": {
+        "tags": [
+          "oauth"
+        ],
+        "operationId": "op5",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jwt/verify": {
+      "post": {
+        "tags": [
+          "jwt"
+        ],
+        "operationId": "op6",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sso/login": {
+      "post": {
+        "tags": [
+          "sso"
+        ],
+        "operationId": "op7",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/2fa/verify": {
+      "post": {
+        "tags": [
+          "2fa"
+        ],
+        "operationId": "op8",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/credential": {
+      "get": {
+        "tags": [
+          "credential"
+        ],
+        "operationId": "op9",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/token": {
+      "get": {
+        "tags": [
+          "token"
+        ],
+        "operationId": "op10",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "security": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/password": {
+      "get": {
+        "tags": [
+          "password"
+        ],
+        "operationId": "op11",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/password/create": {
+      "post": {
+        "tags": [
+          "password"
+        ],
+        "operationId": "op12",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/password/update": {
+      "put": {
+        "tags": [
+          "password"
+        ],
+        "operationId": "op13",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/password/delete": {
+      "delete": {
+        "tags": [
+          "password"
+        ],
+        "operationId": "op14",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/password/reset": {
+      "patch": {
+        "tags": [
+          "password"
+        ],
+        "operationId": "op15",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op16",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "security": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/admin/session": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op17",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/admin/favorite": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op18",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/admin/create": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op19",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/update": {
+      "put": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op20",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/delete": {
+      "delete": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op21",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/admin/export": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op22",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "security": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/admin/download": {
+      "get": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op23",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/admin/upload": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "operationId": "op24",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/list": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "operationId": "op25",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "security": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/product/search": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "operationId": "op26",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/product/review": {
+      "post": {
+        "tags": [
+          "product"
+        ],
+        "operationId": "op27",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/read": {
+      "head": {
+        "tags": [
+          "product"
+        ],
+        "operationId": "op28",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "security": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/product/export": {
+      "options": {
+        "tags": [
+          "product"
+        ],
+        "operationId": "op29",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/product/download": {
+      "get": {
+        "tags": [
+          "product"
+        ],
+        "operationId": "op30",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/upload": {
+      "post": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op31",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimpleBody"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/file/download": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op32",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/export": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op33",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/image.jpg": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op34",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "security": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/image.jpeg": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op35",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/image.png": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op36",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "description": "Description",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/image.gif": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op37",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "summary": "Summary",
+        "security": [],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/style.css": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op38",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "description": "Description",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/file/icon.svg": {
+      "get": {
+        "tags": [
+          "file"
+        ],
+        "operationId": "op39",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
