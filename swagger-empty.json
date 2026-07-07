@@ -1,0 +1,13 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Empty API",
+    "version": "1.0"
+  },
+  "host": "example.com",
+  "basePath": "/api",
+  "schemes": [
+    "https"
+  ],
+  "paths": {}
+}
