@@ -1,0 +1,24 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Empty OpenAPI",
+    "version": "1.0.0",
+    "description": "OpenAPI 3.0 document with empty paths"
+  },
+  "servers": [
+    {
+      "url": "https://example.com/api/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    },
+    "schemas": {}
+  },
+  "paths": {}
+}
